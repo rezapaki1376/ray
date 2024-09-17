@@ -262,7 +262,7 @@ def aiohttp_cache(
         return _wrapper
 
 
-def deny_non_browser_requests() -> Callable:
+def deny_browser_requests() -> Callable:
     """Reject any requests that appear to be made by a browser"""
     def decorator_factory(f: Callable) -> Callable:
         @functools.wraps(f)
