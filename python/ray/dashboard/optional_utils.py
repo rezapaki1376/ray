@@ -269,7 +269,7 @@ def deny_browser_requests() -> Callable:
         async def decorator(self, req: Request):
             if browser_detection.is_browser_request(req):
                 return Response(
-                        text="Method not allowed",
+                        text="Browser requests not allowed",
                         status=aiohttp.web.HTTPNotAllowed.status_code,
                         )
             return await f(self, req)
